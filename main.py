@@ -18,7 +18,7 @@ GCE_REGION = 'us-east1'
 GCE_ZONE = 'us-east1-b' # MAKE SURE THIS IS YOUR VM's ZONE
 GCE_INSTANCE_NAME = 'transcribe-worker-vm'
 GCS_BUCKET_NAME = 'shaw-transcripts-20260207'
-HUGGING_FACE_TOKEN = 'YOUR_HUGGING_FACE_TOKEN' # <--- REPLACE THIS or use environment variable
+HUGGING_FACE_TOKEN = os.environ.get('HUGGING_FACE_TOKEN')
 
 # --- FLASK APP INITIALIZATION ---
 app = Flask(__name__)

@@ -8,7 +8,8 @@ HF_TOKEN=$(curl "http://metadata.google.internal/computeMetadata/v1/instance/att
 TRANSCRIPTION_ID=$(curl "http://metadata.google.internal/computeMetadata/v1/instance/attributes/transcription-id" -H "Metadata-Flavor: Google")
 
 # Set Hugging Face token as environment variable
-export HF_TOKEN="YOUR_HUGGING_FACE_TOKEN" # <-- REPLACE THIS with your actual token
+# Export the fetched token so it's available for transcribe-anything
+export HF_TOKEN
 
 # Ensure gcloud CLI is installed and updated for gsutil access
 sudo apt-get update
